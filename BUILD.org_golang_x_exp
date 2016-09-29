@@ -1,0 +1,13 @@
+package(default_visibility=["//visibility:public"])
+
+load("@io_bazel_rules_go//go:def.bzl", "go_prefix", "go_library")
+
+go_prefix("golang.org/x/exp")
+
+go_library(
+    name = "inotify",
+    srcs = glob(
+        include = ["inotify/*.go"],
+        exclude = ["inotify/*_test.go"],
+    ),
+)
